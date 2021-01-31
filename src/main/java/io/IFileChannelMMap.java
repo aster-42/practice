@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
@@ -44,8 +45,9 @@ public class IFileChannelMMap {
             Object unsafe = unsafeField.get(null);
             Method invokeCleaner = unsafeClass.getMethod("invokeCleaner", ByteBuffer.class);
             invokeCleaner.invoke(unsafe, mappedByteBuffer);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException | NoSuchMethodException |
+                IllegalAccessException | InvocationTargetException | NoSuchFieldException e) {
+            e.printStackTrace();
         }
     }
 
