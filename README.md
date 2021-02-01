@@ -1,1 +1,3 @@
-# practice
+# snippet
+
+snippet for java code
