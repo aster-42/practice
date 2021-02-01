@@ -3,7 +3,7 @@ package wheel;
 /**
  * generate unique id (64 bit)
  * 1 bit for placeholder
- * 41 bit for timestamp
+ * 41 bit for timestamp (suffer mistake when time back)
  * 10 machine id
  * 12 serialize id (4096 keys per second)
  *
@@ -11,7 +11,7 @@ package wheel;
  * */
 public class ISnowFlake {
 
-    private final static long START_STAMP = 1480166465631L;
+    private final static long START_STAMP = 1612147324432L;
     private final static long SEQUENCE_BIT = 12;
     private final static long MACHINE_BIT = 5;
     private final static long DATA_CENTER_BIT = 5;
@@ -43,7 +43,7 @@ public class ISnowFlake {
     public synchronized long nextId() {
         long currStamp = getNewStamp();
         if (currStamp < lastStamp) {
-            throw new RuntimeException("Clock moved backwards.  Refusing to generate id");
+            throw new RuntimeException("Clock moved backwards. Refusing to generate id");
         }
 
         if (currStamp == lastStamp) {

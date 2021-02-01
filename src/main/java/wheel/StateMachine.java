@@ -9,7 +9,7 @@ package wheel;
  * @apiNote http://hekailiang.github.io/squirrel/
  *
  * stateless4j
- * https://github.com/stateless4j/stateless4j
+ * @apiNote https://github.com/stateless4j/stateless4j
  * light
  * instance without share, thread safe
  * */
