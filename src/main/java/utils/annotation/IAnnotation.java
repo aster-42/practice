@@ -1,4 +1,4 @@
-package utils;
+package utils.annotation;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
