@@ -24,8 +24,8 @@ public class ISnowFlake {
     private final static long DATA_CENTER_LEFT = SEQUENCE_BIT + MACHINE_BIT;
     private final static long TIMESTAMP_LEFT = DATA_CENTER_LEFT + DATA_CENTER_BIT;
 
-    private long dataCenterId;
-    private long machineId;
+    private final long dataCenterId;
+    private final long machineId;
     private long sequence = 0L;
     private long lastStamp = -1L;
 
@@ -76,7 +76,9 @@ public class ISnowFlake {
     }
 
     public static void main(String[] args) {
-        ISnowFlake snowFlake = new ISnowFlake(3L, 10L);
+        long dataCenterId = 3L;
+        long machineId = 10L;
+        ISnowFlake snowFlake = new ISnowFlake(dataCenterId, machineId);
         System.out.println("snowFlake.nextId() = " + snowFlake.nextId());
     }
 }
