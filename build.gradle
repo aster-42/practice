@@ -15,6 +15,20 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
     compile group: 'com.google.guava', name: 'guava', version: '30.1-jre'
 
+    // for java9+ JavaEE/CORBA
+    // java.xml.ws
+    compile group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '3.0.0'
+    // java.xml.bind
+    compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.0'
+    // java.activation
+    compile group: 'javax.activation', name: 'activation', version: '1.1.1'
+    // java.xml.ws.annotation
+    compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+    // java.corba
+    compile group: 'org.glassfish.corba', name: 'glassfish-corba-orb', version: '4.2.3'
+    // java.transaction
+    compile group: 'javax.transaction', name: 'jta', version: '1.1'
+
     // lru
     compile group: 'com.googlecode.concurrentlinkedhashmap', name: 'concurrentlinkedhashmap-lru', version: '1.4.2'
 
