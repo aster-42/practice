@@ -1,4 +1,4 @@
-package guava;
+package io.file;
 
 import com.google.common.base.Charsets;
 
@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class IGuavaFile {
+public class Java11EasyReadFile {
     public static void main(String[] args) {
         try {
             Path path = Paths.get("src/main/resources/db.data");
