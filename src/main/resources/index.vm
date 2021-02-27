@@ -1,0 +1,10 @@
+#set($title="page title")
+<script>
+window.csrfToken = {
+    tokenName: "X-XSRF-TOKEN",
+    tokenValue: "$csrfToken.token"
+}
+window.mock = {
+    data: #SLITERAL(${data})
+}
+</script>
