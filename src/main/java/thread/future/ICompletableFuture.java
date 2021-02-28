@@ -63,21 +63,22 @@ public class ICompletableFuture {
 
         //
         CompletableFuture<File> otherFile = CompletableFuture
-                .supplyAsync(()-> download(url))
-                // thenCompose 可以确保返回的只有一层 completableFuture, 保证 job 可以串联
-                .thenCompose(
-                    (file) -> {
-                        render(file);
-                        return CompletableFuture.completedFuture(file);
-                    }
-                )
-                .thenCompose(
-                    (file -> {
-                        System.out.println("fin");
-                        return CompletableFuture.completedFuture(file);
-                    })
-                );
-                // thenCombine
+            .supplyAsync(()-> download(url))
+            // thenCompose 可以确保返回的只有一层 completableFuture
+            // 保证 job 可以串联
+            .thenCompose(
+                (file) -> {
+                    render(file);
+                    return CompletableFuture.completedFuture(file);
+                }
+            )
+            .thenCompose(
+                (file -> {
+                    System.out.println("fin");
+                    return CompletableFuture.completedFuture(file);
+                })
+            );
+            // thenCombine
 
         // allOf 等待所有值回来
         String url1 = "1", url2 = "2", url3 = "3";
