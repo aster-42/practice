@@ -36,13 +36,13 @@ public class ISemaphore {
             Thread thread = new Thread(() -> {
                 try {
                     System.out.println("===="+Thread.currentThread().getName()+"来到停车场");
-                    if(semaphore.availablePermits()==0){
+                    if(semaphore.availablePermits() == 0){
                         System.out.println("车位不足，请耐心等待");
                     }
-                    //获取令牌尝试进入停车场
+                    // 获取令牌尝试进入停车场
                     semaphore.acquire();
                     System.out.println(Thread.currentThread().getName()+"成功进入停车场");
-                    //模拟车辆在停车场停留的时间
+                    // 模拟车辆在停车场停留的时间
                     long time = new Random().nextInt(10000);
                     Thread.sleep(time);
                     System.out.println(Thread.currentThread().getName()+"驶出停车场" + ", 停车时长:" + time);
