@@ -32,7 +32,8 @@ public abstract class BaseWebRender<Param extends WebParam, Data extends ServerD
                 errorInfo.redirect(permissionDenyPage);
             }
             else {
-                errorInfo.setErrorTitle("业务异常,错误编码:" + business.getErrorCode());
+                int errCode = business.getErrorCode();
+                errorInfo.setErrorTitle("业务异常,错误编码:" + errCode);
                 errorInfo.setErrorDetail(business.getErrorMessage());
             }
         } catch (Exception exception) {
