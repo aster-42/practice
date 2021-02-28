@@ -32,8 +32,7 @@ public final class DateUtil {
     }
 
     public static void main(String[] args) {
-        DateFormat df
-                = DateFormat.getDateTimeInstance(
+        DateFormat df = DateFormat.getDateTimeInstance(
                 DateFormat.FULL, DateFormat.SHORT, Locale.CHINA);
         String message = df.format(new Date());
         System.out.println(message);

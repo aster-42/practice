@@ -1,4 +1,4 @@
-package thread;
+package thread.executor;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class IThreadPool {
+public class IExecutorService {
     public static void main(String[] args) {
         AtomicInteger versionCount = new AtomicInteger(0);
         AtomicInteger sq = new AtomicInteger(200);

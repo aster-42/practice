@@ -3,7 +3,7 @@ package thread;
 /**
  * init when used for singleton
  * */
-public class ISingletonLazyInit {
+public class SingletonLazyInit {
 
     /**
      * dcl : double check locking

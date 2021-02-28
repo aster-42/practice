@@ -16,6 +16,9 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '30.1-jre'
     compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8'
+    // static compile friend
+    // @NotNull @Nullable @Contract
+    implementation group: 'org.jetbrains', name: 'annotations', version: '20.1.0'
 
     // spring
     compile group: "org.springframework", name: 'spring-core', version: '5.3.3'
