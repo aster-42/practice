@@ -26,6 +26,7 @@ public class IReentrantLock {
             threadPool.submit(new LockThread(fairLock, i, " fairLock"));
 //            threadPool.submit(new TestThread(unFairLock, i, "unFairLock"));
         }
+        threadPool.shutdown();
     }
 
     static class LockThread implements Runnable {
@@ -40,7 +41,7 @@ public class IReentrantLock {
         }
         @Override
         public void run() {
-            System.out.println(Thread.currentThread().getId() + " Thread Start " + tag);
+            System.out.println(Thread.currentThread().getId() + " Thread Start " + tag + " index " + index);
             invoke();
         }
         private void invoke() {
