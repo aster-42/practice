@@ -23,17 +23,17 @@ public class IReentrantLock {
         // 非公平锁
         ReentrantLock unFairLock = new ReentrantLock();
         for (int i = 0; i < 10; i++) {
-            threadPool.submit(new TestThread(fairLock, i, " fairLock"));
+            threadPool.submit(new LockThread(fairLock, i, " fairLock"));
 //            threadPool.submit(new TestThread(unFairLock, i, "unFairLock"));
         }
     }
 
-    static class TestThread implements Runnable {
+    static class LockThread implements Runnable {
         Lock lock;
         int index;
         String tag;
 
-        public TestThread(Lock lock, int index, String tag) {
+        public LockThread(Lock lock, int index, String tag) {
             this.lock = lock;
             this.index = index;
             this.tag = tag;
